@@ -1,0 +1,25 @@
+@import './variables';
+
+@mixin maxWidth($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin minWidth($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @include minWidth($mobile_breakpoint + 1px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @include maxWidth($mobile_breakpoint) {
+    @content;
+  }
+}
