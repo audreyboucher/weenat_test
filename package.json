@@ -27,14 +27,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
+    "lint": "eslint src/**/*.ts src/**/*.tsx",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "testing-library/prefer-screen-queries": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -49,6 +53,10 @@
     ]
   },
   "devDependencies": {
-    "sass": "^1.89.0"
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.1.0",
+    "sass": "^1.89.0",
+    "typescript-eslint": "^8.32.1"
   }
 }
