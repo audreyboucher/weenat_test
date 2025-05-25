@@ -8,7 +8,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
+    "@types/jest": "^29.5.14",
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
@@ -27,8 +27,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll",
-    "lint": "eslint src/**/*.ts src/**/*.tsx",
+    "test": "react-scripts test --watch",
+    "test:all": "react-scripts test --watchAll=false",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "npm run lint -- --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -56,6 +58,8 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
     "sass": "^1.89.0",
     "typescript-eslint": "^8.32.1"
   }
