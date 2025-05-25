@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { MonthView } from './components';
+
 import './styles/global.scss';
 
-function App() {
-  return (
-    <main role="main"></main>
-  );
-}
+const App = () => (
+  <main role="main">
+    <MonthView />
+  </main>
+);
 
 export default App;

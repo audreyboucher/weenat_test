@@ -1,7 +1,9 @@
+import type { Day } from "../types/dates";
+
 export interface Event {
   id: string;
   name: string;
-  date: Date;
+  day: Day;
 };
 
 export interface Error {
