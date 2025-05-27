@@ -1,0 +1,113 @@
+@import '../../styles/colors';
+@import '../../styles/mixins';
+
+.container {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+
+    .overlay {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  .contentContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    background: $background;
+    padding: 24px;
+    overflow: auto;
+  }
+
+  @include desktop {
+    top: 0;
+    bottom: 0;
+    right: -750px;
+    width: 750px;
+    transition: right .2s ease-in-out;
+
+    &.opened {
+      right: 0;
+    }
+  }
+
+  @include mobile {
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    transition: top .2s ease-in-out;
+
+    &.opened {
+      top: 0;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(#000, .1);
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity .5s linear;
+  z-index: -1;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+}
+
+.eventsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $primary;
+    border-radius: 10px;
+    overflow: hidden;
+
+    span {
+      padding: 0 20px;
+    }
+  }
+}
+
+.success {
+  position: fixed;
+  bottom: -100px;
+  right: 24px;
+  border: 1px solid $success;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background: $success_light;
+  color: $success;
+  transition: bottom .5s ease-in-out;
+  z-index: 1;
+
+  &.displayed {
+    bottom: 24px;
+  }
+}

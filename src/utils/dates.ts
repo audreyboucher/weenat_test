@@ -1,4 +1,6 @@
-import { Day, Weekday, MonthSelection } from '../types/dates';
+import { Day, Weekday, MonthSelection, Month } from '../types/dates';
+
+export const toDateFormat = ({ weekday, number, month, year }: Day) => `${ Weekday[weekday] }, ${ Month[month] } ${ number }, ${ year }`;
 
 export const weekdaysAmount = Object.keys(Weekday).filter((key) => Number.isNaN(+key));
 
