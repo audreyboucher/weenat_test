@@ -36,9 +36,9 @@ describe('MonthView', () => {
   test('selects a day on click on it', () => {
     const { getByText } = renderWithProviders(<MonthView />);
 
-    userEvent.click(getByText('1').parentElement!);
+    userEvent.click(getByText('1').parentElement!.parentElement!);
 
-    expect(getByText('1').parentElement).toHaveClass('selected');
+    expect(getByText('1').parentElement!.parentElement).toHaveClass('selected');
   });
 
   test('does not select an empty day on click on it', () => {
