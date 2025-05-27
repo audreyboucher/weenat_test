@@ -69,7 +69,8 @@ const calendarSlice = createSlice({
     },
     unselectDay: (state) => { state.selected = null; },
     createEvent: (state, action: PayloadAction<Omit<Event, 'id'>>) => {
-      if (!('payload' in action) || !('name' in action.payload) || !('date' in action.payload)) {
+      if (!('payload' in action) || !('name' in action.payload) || !('day' in action.payload)) {
+        console.log(action);
         state.errors = createError(state.errors, "Information is missing from the new event");
         return;
       }
@@ -100,10 +101,6 @@ const calendarSlice = createSlice({
     selectDisplayedMonth: (state) => state.view,
     selectOpenedDay: (state) => state.selected,
     selectAllEvents: (state) => state.events,
-    selectEventsByMonth: (state, { month, year }: Day) =>
-      state.events.filter(({ day }) => day.month === month && day.year === year),
-    selectEventsByDay: (state, { number, month, year }: Day) =>
-      state.events.filter(({ day }) => day.number === number && day.month === month && day.year === year),
     selectAllErrors: (state) => state.errors,
   },
 });
@@ -122,8 +119,6 @@ export const {
   selectDisplayedMonth,
   selectOpenedDay,
   selectAllEvents,
-  selectEventsByMonth,
-  selectEventsByDay,
   selectAllErrors,
 } = calendarSlice.selectors;
 
