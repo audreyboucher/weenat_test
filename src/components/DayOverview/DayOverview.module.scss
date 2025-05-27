@@ -34,10 +34,11 @@
     bottom: 0;
     right: -750px;
     width: 750px;
-    transition: right .2s ease-in-out;
+    transition: visibility 0s .2s, opacity 0s .2s, right .2s ease-in-out;
 
     &.opened {
       right: 0;
+      transition: visibility 0s, opacity 0s, right .2s ease-in-out;
     }
   }
 
@@ -46,10 +47,11 @@
     left: 0;
     right: 0;
     height: 100%;
-    transition: top .2s ease-in-out;
+    transition: visibility 0s .2s, opacity 0s .2s, right .2s ease-in-out;
 
     &.opened {
       top: 0;
+      transition: visibility 0s, opacity 0s, top .2s ease-in-out;
     }
   }
 }
