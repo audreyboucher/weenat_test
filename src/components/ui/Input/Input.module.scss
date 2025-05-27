@@ -1,0 +1,64 @@
+@import '../../../styles/colors';
+
+.input {
+  position: relative;
+  margin: 40px 0 30px;
+  border: none;
+
+  label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: $primary;
+    transition: all .3s linear;
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid $primary;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: rgba($primary, .1);
+    color: $primary;
+  }
+
+  &.error {
+    position: relative;
+
+    label {
+      color: $error;
+    }
+
+    input {
+      border-color: $error;
+      background: rgba($error, .1);
+      color: $error;
+    }
+  }
+
+  &.focus {
+    label {
+      top: -30px;
+      left: 0;
+    }
+  }
+
+  &.disabled {
+    label {
+      color: $disabled;
+    }
+
+    input, textarea {
+      border-color: $disabled;
+      color: $disabled;
+    }
+  }
+}
+
+.errorMessage {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  color: $error;
+  font-size: 14px;
+}
