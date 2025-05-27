@@ -1,0 +1,92 @@
+@import '../../../styles/colors';
+
+.button {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  span {
+    position: relative;
+    display: block;
+    color: $text_reverse;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  &.primary {
+    background: none;
+
+    span {
+      padding: 15px 30px;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 5px;
+      transition: all .2s ease-in-out;
+      z-index: -1;
+    }
+
+    &:before {
+      background: $primary;
+      background: $gradient;
+    }
+
+    &:after {
+      border: 1px solid $primary;
+    }
+
+    &:hover {
+      &:before {
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+      }
+
+      &:after {
+        top: -5px;
+        bottom: -5px;
+        left: -5px;
+        right: -5px;
+      }
+    }
+
+    &[disabled] {
+      &:before {
+        background-color: $disabled_light;
+      }
+
+      &:after {
+        border-color: $disabled_light;
+      }
+    }
+  }
+
+  &.secondary {
+    border-radius: 5px;
+    background: $primary;
+    transition: all .2s ease-in-out;
+
+    span {
+      padding: 10px 15px;
+    }
+
+    &:hover {
+      background: $primary_light;
+    }
+
+    &[disabled] {
+      background: $disabled_light;
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+  }
+}
