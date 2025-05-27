@@ -44,7 +44,7 @@ const WeekRow: FC<WeekRowProps> = ({ week, firstLine, currentMonth }) => {
                 onClick: () => dispatch(selectDay({ ...view, number: n } as Day)),
               } : {}) }
             >
-              { n > 0 ? <span>{ n }</span> : null }
+              { n > 0 ? <span><span>{ n }</span></span> : null }
             </td>
           ))
       }
