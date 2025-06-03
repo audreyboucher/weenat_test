@@ -41,6 +41,10 @@ const calendarSlice = createSlice({
       state.view = parseDate(new Date(action.payload.year, action.payload.month, 1));
       state.selected = null;
     },
+    displayCurrentMonth: (state) => {
+      state.view = parseDate(new Date());
+      state.selected = null;
+    },
     displayPreviousMonth: (state) => {
       state.view = parseDate(new Date(
         state.view.month === Month.January ? state.view.year - 1 : state.view.year,
@@ -107,6 +111,7 @@ const calendarSlice = createSlice({
 
 export const {
   updateDisplayedMonth,
+  displayCurrentMonth,
   displayPreviousMonth,
   displayNextMonth,
   selectDay,
