@@ -56,16 +56,6 @@
         right: -5px;
       }
     }
-
-    &[disabled] {
-      &:before {
-        background-color: $disabled_light;
-      }
-
-      &:after {
-        border-color: $disabled_light;
-      }
-    }
   }
 
   &.secondary {
@@ -75,6 +65,7 @@
 
     span {
       padding: 10px 15px;
+      font-size: 18px;
     }
 
     &:hover {
@@ -86,7 +77,101 @@
     }
   }
 
-  &[disabled] {
-    pointer-events: none;
+  &.reverse {
+    border-radius: 5px;
+    padding: 10px 15px;
+    background: $background_light;
+    transition: all .3s ease-in-out;
+
+    span {
+      color: $text_dark;
+      font-size: 16px;
+    }
+
+    &:hover {
+      background: lighten($background_light, 20%);
+      color: $text_dark;
+    }
+  }
+
+  &.outlined,
+  &.light {
+    background: none;
+
+    span {
+      padding: 0;
+      background: none;
+    }
+
+    &.primary {
+      span {
+        color: $primary;
+      }
+
+      &:hover {
+        span {
+          color: $primary_light;
+        }
+      }
+    }
+
+    &.secondary {
+      span {
+        color: $secondary;
+      }
+
+      &:hover {
+        span {
+          color: lighten($secondary, 40%);
+        }
+      }
+    }
+
+    &.reverse {
+      span {
+        color: $text_reverse;
+      }
+
+      &:hover {
+        span {
+          color: darken($text_reverse, 40%);
+        }
+      }
+    }
+
+    &:before, &:after {
+      content: none;
+    }
+  }
+
+  &.outlined {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 5px 15px;
+
+    &.primary {
+      border-color: $primary;
+
+      &:hover {
+        border-color: $primary_light;
+      }
+    }
+
+    &.secondary {
+      border-color: $secondary;
+
+      &:hover {
+        border-color: lighten($secondary, 40%);
+      }
+    }
+
+    &.reverse {
+      border-color: $text_reverse;
+
+      &:hover {
+        border-color: darken($text_reverse, 40%);
+      }
+    }
   }
 }
