@@ -1,52 +1,61 @@
-# Getting Started with Create React App
+# Technical test for Weenat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Brief
 
-## Available Scripts
+Create a monthly calendar React app.
 
-In the project directory, you can run:
+The user must be able to:
+
+- naviguate across months and years
+- create an event on click on a day (the event must then be shown on the day)
+- remove the event
+
+## Time spent on it
+
+The project has been started on May 25th 2025 and here how the time has been spent:
+
+- May 25th: almost all day on it
+- between May 26th & 28th: a few hours on it whenever I had a bit of time
+- May 29th: all afternoon on it
+- from May 30th: a few hours on it whenever I had a bit of time
+- June 2nd: project is finished
+- June 3rd: commit changes that were still local and update the [README.md](./README.md) file
+
+## Installation
+
+As every required package is mentioned in the [package.json](./package.json) file, a simple install is enough:
+
+```shell
+$ cd path-to-project
+$ npm install
+```
+
+It will install among others:
+
+- React & Redux packages
+- Typescript
+- SASS
+- JEST & testing-library
+
+## Launch
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in the interactive watch mode.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run lint`
 
-```
+To be able to use the linter, `eslint` must be previously installed:
+
+```shell
 $ npm install -g eslint eslint-plugin-react
 ```
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
