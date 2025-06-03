@@ -42,7 +42,9 @@ describe('MonthView', () => {
   });
 
   test('does not select an empty day on click on it', () => {
-    const { getByLabelText } = renderWithProviders(<MonthView />);
+    const { getByLabelText } = renderWithProviders(<MonthView  />, {
+      preloadedState: { view: { month: 0, year: 2025 } }
+    });
 
     userEvent.click(getByLabelText('calendar').querySelectorAll('.empty')[0]);
 

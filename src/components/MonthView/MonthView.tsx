@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { useAppDispatch } from '../../store';
 import { selectDisplayedMonth, selectOpenedDay, selectDay } from '../../store/slice';
 
-import { weekdaysAmount, isCurrentMonth, getDaysPerMonth, getFirstDayOfMonth, parseDate, parseDays } from '../../utils/dates';
+import { weekdays, isCurrentMonth, getDaysPerMonth, getFirstDayOfMonth, parseDate, parseDays } from '../../utils/dates';
 
 import type { Day } from '../../types/dates';
 
@@ -24,7 +24,7 @@ const WeekRow: FC<WeekRowProps> = ({ week, firstLine, currentMonth }) => {
   const selected = useSelector(selectOpenedDay);
 
   const filledWeek = firstLine
-    ? [ ...(new Array(weekdaysAmount.length - week.length).fill(0)), ...week ]
+    ? [ ...(new Array(weekdays.length - week.length).fill(0)), ...week ]
     : week;
 
   return (
@@ -70,7 +70,7 @@ const MonthView: FC = () => {
       <thead className={styles.container}>
         <tr className={classNames(styles.row, styles.head)} role="presentation">
           {
-            weekdaysAmount.map((key, index) =>
+            weekdays.map((key, index) =>
               <th className={classNames(styles.column, styles.head)} key={index}>{ key.slice(0, 3) }</th>
             )
           }

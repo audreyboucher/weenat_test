@@ -8,9 +8,10 @@
   justify-content: stretch;
   align-items: stretch;
   margin: auto;
+  padding-top: 20px;
   width: 100%;
   max-width: $max-width;
-  height: 100vh;
+  height: calc(100vh - 80px);
 }
 
 .container {
@@ -73,6 +74,12 @@
   font-size: 1rem;
   font-weight: 300;
   text-align: center;
+
+  &.head {
+    justify-content: center;
+    align-items: center;
+    color: $text_light;
+  }
 
   & > span {
     margin: 0 auto;
