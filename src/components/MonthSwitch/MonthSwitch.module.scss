@@ -1,0 +1,41 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+
+.header {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  height: 80px;
+  background: $background_dark;
+  color: $text_reverse;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: $max_width;
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 500;
+  }
+}
+
+.navIconsContainer {
+  display: flex;
+  align-items: center;
+
+  svg {
+    cursor: pointer;
+  }
+}

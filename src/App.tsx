@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import { MonthView, DayOverview } from './components';
+import { MonthView, DayOverview, MonthSwitch } from './components';
 
 import './styles/global.scss';
 
-const App = () => (
+const App: FC = () => (
   <main role="main">
+    <MonthSwitch />
     <MonthView />
     <DayOverview />
   </main>
