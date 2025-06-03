@@ -1,11 +1,14 @@
-$primary: #3a47d5;
+$primary: #3498db;
 $primary_light: lighten($primary, 10%);
-$secondary: #00d2ff;
+$secondary: #2980b9;
 
 $text_dark: #2d3436;
 $text: #636e72;
+$text_light: #bdc3c7;
 $text_reverse: #fff;
 $background: #fff;
+$background_light: #bdc3c7;
+$background_dark: #2d3436;
 
 $success: #6ab04c;
 $success_light: #badc58;
@@ -16,7 +19,7 @@ $error_light: #ff7675;
 $disabled: #b2bec3;
 $disabled_light: #dfe6e9;
 
-$gradient: linear-gradient(135deg, $secondary 0, $primary 100%);
+$gradient: linear-gradient(135deg, #00d2ff 0, #3a47d5 100%);
 
 :export {
   closeIcon: $text_dark;
