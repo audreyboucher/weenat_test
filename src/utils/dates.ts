@@ -1,8 +1,11 @@
-import { Day, Weekday, MonthSelection, Month } from '../types/dates';
+import { Day, Weekday, WeekdayUnionType, MonthSelection, Month, MonthUnionType } from '../types/dates';
+
+export const weekdays: WeekdayUnionType[] = Object.keys(Weekday).filter((key) => Number.isNaN(+key)) as WeekdayUnionType[];
+export const months: MonthUnionType[] = Object.keys(Month).filter((key) => Number.isNaN(+key)) as MonthUnionType[];
+
+export const getMonthName = (month: Month): MonthUnionType => months.find((el) => Month[el] === month) as MonthUnionType;
 
 export const toDateFormat = ({ weekday, number, month, year }: Day) => `${ Weekday[weekday] }, ${ Month[month] } ${ number }, ${ year }`;
-
-export const weekdaysAmount = Object.keys(Weekday).filter((key) => Number.isNaN(+key));
 
 export const isCurrentMonth = (toBeCompared?: MonthSelection): boolean => {
   if (!toBeCompared) return true;
@@ -30,4 +33,5 @@ export const parseDays = ({ year, month }: MonthSelection, amount: number): numb
       if (cur.weekday === 0) acc.push([cur.number]);
       else acc[acc.length - 1].push(cur.number);
       return acc;
-    }, [[]]);
+    }, [[]])
+    .filter((array) => array.length);

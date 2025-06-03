@@ -8,6 +8,8 @@ export enum Weekday {
   'Saturday' = 6,
 };
 
+export type WeekdayUnionType = `${ keyof typeof Weekday }`;
+
 export enum Month {
   January = 0,
   February = 1,
@@ -23,6 +25,8 @@ export enum Month {
   December = 11,
 };
 
+export type MonthUnionType = `${ keyof typeof Month }`;
+
 export type Year = number;
 
 export type Day = {
@@ -32,4 +36,5 @@ export type Day = {
   year: Year;
 };
 
-export type MonthSelection = Pick<Day, 'month' | 'year'>;
+export type MonthSelectionKeys = 'month' | 'year';
+export type MonthSelection = Pick<Day, MonthSelectionKeys>;
